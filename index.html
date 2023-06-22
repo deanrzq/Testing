@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
-    <!--buat folder css, lalu di dalamnya buat folder style.css-->
+    <script src="script.js"></script>
     <title>Temperature Conversion</title>
 </head>
 <body>
@@ -11,15 +11,44 @@
    </header> 
    <section class="InputSection">
         <label for="inputField">Celcius (°C)</label>
-        <input type="text" id="inputField">
+        <input type="number" id="inputField">
+
         <div class="InputButtonSection">
-            <button>Convert</button>
-            <button>Reset</button>
-            <button>Reverse</button>
+            <button type="button" title="Convert" class="btnConvert" onclick="Celcius_Fahrenheit()">Convert</button>
+            <button class="button" id="btnReset" onclick="reset()">Reset</button>
+            <button class="button" id="btnReverse" onclick="reverse()">Reverse</button>
         </div>
-        <label for="ouputField">Fahrenheit (°F)</label>
-        <input type="text" id="ouputField">
     </section>
-    <script src="script.js"></script>
+    <section class="OutputSection">
+        <label for="outputField">Fahrenheit (°F)</label>
+        <input type="number" class="outputField" id="outputField">
+
+        <label for="Calculation">Calculation</label>
+        <textarea class="Calculation" id="Calculation" readonly></textarea>
+    </section>
+    <div class="Box">
+        <h2>Cara Konversi Celcius ke Fahrenheit</h2>
+        <div class="Explanation">
+            Suhu S dalam derajat Fahrenheit (&deg;F) sama dengan suhu S dalam derajat Celcius (&deg;C) kali 9/5 ditambah 32.
+            <br>
+            <br>
+            S(&deg;F) = (S(&deg;C) x 9/5) + 32
+            <br>
+            atau
+            <br>
+            S(&deg;F) = (S(&deg;C) x 1.8) + 32
+        </div>
+        <div class="Contoh">
+            <p>Contoh:</p>
+            <p>Konversikan 30 derajat Celcius (&deg;C) ke derajat Fahrenheit (&deg;F).</p>
+            <p>S(&deg;F) = (30&deg;C * 9/5) + 32</p>
+            <p>S(&deg;F) = 54 + 32</p>
+            <p>S(&deg;F) = 86</p>
+            <p>Jadi, 30&deg;C = 86&deg;F.</p>
+        </div>
+    </div>
+    <div id="footer">
+        <p>Design by: Dean Rizqullah Ananda</p> 
+    </div>
 </body>
 </html>
