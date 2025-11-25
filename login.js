@@ -106,9 +106,8 @@ function loginUser() {
 
       // LOGIN BERHASIL
       alert("Login berhasil!");
-      localStorage.setItem("loginStatus", "true"); 
       console.log("Redirect running...");
-      window.location.href = "index.html";
+      window.location.href = "kalkulatorsuhu.html";
     })
     .catch(err => {
       console.error(err);
