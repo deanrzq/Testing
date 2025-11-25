@@ -1,61 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <script>
-    if (localStorage.getItem("loginStatus") !== "true") {
-    window.location.href = "login.html";}
-    </script>
-    <script src="script.js"></script>
-
-    <title>Temperature Conversion</title>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css">
 </head>
 <body>
-   <header>
-        <h1>Temperature Conversion</h1>
-   </header> 
-   <section class="InputSection">
-        <label for="inputField">Celcius (°C)</label>
-        <input type="text" id="inputField" oninput="validateInput()">
-        <p id="errorMessage"></p>
+
+<div class="container">
+
+  <!-- LOGIN FORM -->
+  <div id="loginForm" class="form-box">
+      <h2>Login</h2>
+      <input type="text" id="loginUsername" placeholder="Username">
+      <input type="password" id="loginAccessCode" placeholder="Kode Akses">
+      <button onclick="loginUser()">Login</button>
+      <p class="switch">
+  <span onclick="forgotAccessCode()">Lupa kode akses?</span>
+</p>
 
 
-        <div class="InputButtonSection">
-            <button class="button" id="btnConvert" onclick="convert()">Convert</button>
-            <button class="button" id="btnReset" onclick="reset()">Reset</button>
-            <button class="button" id="btnReverse" onclick="reverse()">Reverse</button>
-        </div>
-    </section>
-    <section class="OutputSection">
-        <label for="outputField">Fahrenheit (°F)</label>
-        <input type="string" class="outputField" id="outputField">
+      <p class="switch">Belum punya akun? 
+        <span onclick="showRegister()">Daftar di sini</span>
+      </p>
+  </div>
 
-        <label for="Calculation">Calculation</label>
-        <textarea class="Calculation" id="Calculation" readonly></textarea>
-    </section>
-    <div class="Box">
-        <h2>Cara Konversi Celcius ke Fahrenheit</h2>
-        <div class="Explanation">
-            Suhu S dalam derajat Fahrenheit (&deg;F) sama dengan suhu S dalam derajat Celcius (&deg;C) kali 9/5 ditambah 32.
-            <br>
-            <br>
-            S(&deg;F) = (S(&deg;C) x 9/5) + 32
-            <br>
-            atau
-            <br>
-            S(&deg;F) = (S(&deg;C) x 1.8) + 32
-        </div>
-        <div class="Contoh">
-            <p>Contoh:</p>
-            <p>Konversikan 30 derajat Celcius (&deg;C) ke derajat Fahrenheit (&deg;F).</p>
-            <p>S(&deg;F) = (30&deg;C * 9/5) + 32</p>
-            <p>S(&deg;F) = 54 + 32</p>
-            <p>S(&deg;F) = 86</p>
-            <p>Jadi, 30&deg;C = 86&deg;F.</p>
-        </div>
-    </div>
-    <div id="footer">
-        <p>Design by: Dean Rizqullah Ananda-2023</p> 
-    </div>
+  <!-- REGISTER FORM (default: hidden) -->
+  <div id="registerForm" class="form-box hidden">
+      <h2>Daftar Akun</h2>
+      <input type="text" id="regUsername" placeholder="Username">
+      <input type="password" id="regPassword" placeholder="Buat Password">
+      <button onclick="registerUser()">Daftar</button>
+
+      <p class="switch">Sudah punya akun?
+        <span onclick="showLogin()">Login</span>
+      </p>
+  </div>
+
+</div>
+
+<!-- Firebase CDN -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<!-- Firebase Config -->
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyD-NY3TYVMob_wvVYilKcXS3TgIt8n3r6c",
+    authDomain: "kalkulator-suhu.firebaseapp.com",
+    projectId: "kalkulator-suhu",
+    storageBucket: "kalkulator-suhu.firebasestorage.app",
+    messagingSenderId: "176789578940",
+    appId: "1:176789578940:web:ca660f84133b14f6601cb9",
+    measurementId: "G-KZLB9BHRWJ"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Initialize services
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+</script>
+
+<script src="login.js"></script>
+
 </body>
 </html>

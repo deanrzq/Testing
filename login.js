@@ -107,7 +107,7 @@ function loginUser() {
       // LOGIN BERHASIL
       alert("Login berhasil!");
       console.log("Redirect running...");
-      window.location.href = "index.html";
+      window.location.href = "kalkulator.html";
     })
     .catch(err => {
       console.error(err);
