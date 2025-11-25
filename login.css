@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, rgb(231, 233, 130)); /* sama seperti kalkulator */
+  background: linear-gradient(135deg, rgb(231, 233, 130));
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -20,12 +20,12 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* ===== TITLE (CAPSLOCK) ===== */
+/* ===== TITLE ===== */
 h2 {
   margin-bottom: 25px;
   color: black;
   font-weight: 700;
-  text-transform: uppercase;       /* CAPSLOCK */
+  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -72,7 +72,7 @@ button:hover {
   color: black;
 }
 
-/* ===== LINK STYLE (span) ===== */
+/* ===== LINK STYLE ===== */
 .switch span {
   color: rgb(113, 114, 4);
   text-decoration: underline;
@@ -85,19 +85,20 @@ button:hover {
   color: rgb(231, 233, 130);
 }
 
-/* ===== HIDE FORM ===== */
+/* ===== HIDDEN FORM ===== */
 .hidden {
   display: none;
 }
+
 /* ===== RESPONSIVE FOR MOBILE ===== */
 @media (max-width: 480px) {
   .container {
-    width: 90%;           /* dari 350px → fleksibel mengikuti layar */
-    padding: 25px 20px;   /* padding diperkecil */
+    width: 90%;
+    padding: 25px 20px;
   }
 
   input, button {
-    font-size: 14px;      /* tulisan tetap terbaca */
+    font-size: 14px;
     padding: 11px;
   }
 
