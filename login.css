@@ -89,3 +89,23 @@ button:hover {
 .hidden {
   display: none;
 }
+/* ===== RESPONSIVE FOR MOBILE ===== */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;           /* dari 350px → fleksibel mengikuti layar */
+    padding: 25px 20px;   /* padding diperkecil */
+  }
+
+  input, button {
+    font-size: 14px;      /* tulisan tetap terbaca */
+    padding: 11px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .switch {
+    font-size: 12px;
+  }
+}
