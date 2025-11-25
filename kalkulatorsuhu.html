@@ -3,6 +3,11 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script>
+    if (localStorage.getItem("loginStatus") !== "true") {
+    window.location.href = "login.html";}
+    </script>
+
     <title>Temperature Conversion</title>
 </head>
 <body>
@@ -11,17 +16,19 @@
    </header> 
    <section class="InputSection">
         <label for="inputField">Celcius (°C)</label>
-        <input type="number" id="inputField">
+        <input type="text" id="inputField" oninput="validateInput()">
+        <p id="errorMessage"></p>
+
 
         <div class="InputButtonSection">
-            <button type="button" title="Convert" class="btnConvert" onclick="Celcius_Fahrenheit()">Convert</button>
+            <button class="button" id="btnConvert" onclick="convert()">Convert</button>
             <button class="button" id="btnReset" onclick="reset()">Reset</button>
             <button class="button" id="btnReverse" onclick="reverse()">Reverse</button>
         </div>
     </section>
     <section class="OutputSection">
         <label for="outputField">Fahrenheit (°F)</label>
-        <input type="number" class="outputField" id="outputField">
+        <input type="string" class="outputField" id="outputField">
 
         <label for="Calculation">Calculation</label>
         <textarea class="Calculation" id="Calculation" readonly></textarea>
@@ -48,7 +55,7 @@
         </div>
     </div>
     <div id="footer">
-        <p>Design by: Dean Rizqullah Ananda</p> 
+        <p>Design by: Dean Rizqullah Ananda-2023</p> 
     </div>
 </body>
 </html>

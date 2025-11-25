@@ -78,6 +78,20 @@ button:active {
     background-color: rgb(231, 233, 130);
 }
 
+#errorMessage {
+    display: inline-block;    
+    max-width: fit-content;      
+    background-color: black;
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 4px;
+    padding: 4px;
+    visibility: hidden;             
+    opacity: 0;                     
+    transition: opacity 0.2s ease;  
+}
+
 #outputField:hover {
     background-color: rgb(231, 233, 130);
 }
