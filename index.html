@@ -1,75 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-
     <script>
-        if (localStorage.getItem("loginStatus") !== "true") {
-            window.location.href = "login.html";
-        }
+    if (localStorage.getItem("loginStatus") !== "true") {
+    window.location.href = "login.html";}
     </script>
 
     <title>Temperature Conversion</title>
 </head>
-
 <body>
-
-    <header>
+   <header>
         <h1>Temperature Conversion</h1>
-    </header>
+   </header> 
+   <section class="InputSection">
+        <label for="inputField">Celcius (°C)</label>
+        <input type="text" id="inputField" oninput="validateInput()">
+        <p id="errorMessage"></p>
 
-    <div class="container">
 
-        <section class="InputSection">
-            <label for="inputField">Celcius (°C)</label>
-            <input type="text" id="inputField" oninput="validateInput()">
-            <p id="errorMessage"></p>
-
-            <div class="button-group">
-                <button onclick="convert()">Convert</button>
-                <button onclick="reset()">Reset</button>
-                <button onclick="reverse()">Reverse</button>
-            </div>
-        </section>
-
-        <section class="OutputSection">
-            <label for="outputField">Fahrenheit (°F)</label>
-            <input type="text" id="outputField" readonly>
-
-            <label for="Calculation">Calculation</label>
-            <textarea id="Calculation" readonly></textarea>
-        </section>
-
-        <div class="Box">
-            <h2>Cara Konversi Celcius ke Fahrenheit</h2>
-
-            <div class="Explanation">
-                Suhu S dalam derajat Fahrenheit (&deg;F) sama dengan suhu S dalam derajat Celcius (&deg;C) kali 9/5 ditambah 32.
-                <br><br>
-                S(&deg;F) = (S(&deg;C) × 9/5) + 32
-                <br>
-                atau
-                <br>
-                S(&deg;F) = (S(&deg;C) × 1.8) + 32
-            </div>
-
-            <div class="Contoh">
-                <p>Contoh:</p>
-                <p>Konversikan 30°C ke °F.</p>
-                <p>S(°F) = (30 × 9/5) + 32</p>
-                <p>S(°F) = 54 + 32</p>
-                <p>S(°F) = 86</p>
-            </div>
+        <div class="InputButtonSection">
+            <button class="button" id="btnConvert" onclick="convert()">Convert</button>
+            <button class="button" id="btnReset" onclick="reset()">Reset</button>
+            <button class="button" id="btnReverse" onclick="reverse()">Reverse</button>
         </div>
+    </section>
+    <section class="OutputSection">
+        <label for="outputField">Fahrenheit (°F)</label>
+        <input type="string" class="outputField" id="outputField">
 
+        <label for="Calculation">Calculation</label>
+        <textarea class="Calculation" id="Calculation" readonly></textarea>
+    </section>
+    <div class="Box">
+        <h2>Cara Konversi Celcius ke Fahrenheit</h2>
+        <div class="Explanation">
+            Suhu S dalam derajat Fahrenheit (&deg;F) sama dengan suhu S dalam derajat Celcius (&deg;C) kali 9/5 ditambah 32.
+            <br>
+            <br>
+            S(&deg;F) = (S(&deg;C) x 9/5) + 32
+            <br>
+            atau
+            <br>
+            S(&deg;F) = (S(&deg;C) x 1.8) + 32
+        </div>
+        <div class="Contoh">
+            <p>Contoh:</p>
+            <p>Konversikan 30 derajat Celcius (&deg;C) ke derajat Fahrenheit (&deg;F).</p>
+            <p>S(&deg;F) = (30&deg;C * 9/5) + 32</p>
+            <p>S(&deg;F) = 54 + 32</p>
+            <p>S(&deg;F) = 86</p>
+            <p>Jadi, 30&deg;C = 86&deg;F.</p>
+        </div>
     </div>
-
-    <footer id="footer">
-        <p>Design by: Dean Rizqullah Ananda - 2023</p>
-    </footer>
-
+    <div id="footer">
+        <p>Design by: Dean Rizqullah Ananda-2023</p> 
+    </div>
 </body>
 </html>
