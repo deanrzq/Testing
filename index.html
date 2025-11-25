@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Temperature Conversion</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+
+    <!-- Redirect harus paling atas -->
     <script>
-    if (localStorage.getItem("loginStatus") !== "true") {
-    window.location.href = "login.html";}
+        if (localStorage.getItem("loginStatus") !== "true") {
+            window.location.href = "/login.html";
+        }
     </script>
 
-    <title>Temperature Conversion</title>
+    <!-- script utama -->
+    <script src="script.js" defer></script>
 </head>
+
 <body>
    <header>
         <h1>Temperature Conversion</h1>
@@ -18,7 +23,6 @@
         <label for="inputField">Celcius (°C)</label>
         <input type="text" id="inputField" oninput="validateInput()">
         <p id="errorMessage"></p>
-
 
         <div class="InputButtonSection">
             <button class="button" id="btnConvert" onclick="convert()">Convert</button>
@@ -33,27 +37,26 @@
         <label for="Calculation">Calculation</label>
         <textarea class="Calculation" id="Calculation" readonly></textarea>
     </section>
+
     <div class="Box">
         <h2>Cara Konversi Celcius ke Fahrenheit</h2>
         <div class="Explanation">
             Suhu S dalam derajat Fahrenheit (&deg;F) sama dengan suhu S dalam derajat Celcius (&deg;C) kali 9/5 ditambah 32.
-            <br>
-            <br>
+            <br><br>
             S(&deg;F) = (S(&deg;C) x 9/5) + 32
             <br>
             atau
             <br>
             S(&deg;F) = (S(&deg;C) x 1.8) + 32
         </div>
+
         <div class="Contoh">
             <p>Contoh:</p>
-            <p>Konversikan 30 derajat Celcius (&deg;C) ke derajat Fahrenheit (&deg;F).</p>
-            <p>S(&deg;F) = (30&deg;C * 9/5) + 32</p>
-            <p>S(&deg;F) = 54 + 32</p>
-            <p>S(&deg;F) = 86</p>
-            <p>Jadi, 30&deg;C = 86&deg;F.</p>
+            <p>Konversikan 30°C ke °F:</p>
+            <p>S(&deg;F) = (30 * 9/5) + 32 = 86</p>
         </div>
     </div>
+
     <div id="footer">
         <p>Design by: Dean Rizqullah Ananda-2023</p> 
     </div>

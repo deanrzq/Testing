@@ -76,6 +76,7 @@ button:active {
 
 #inputField:hover {
     background-color: rgb(231, 233, 130);
+    max-width: fit-content;
 }
 
 #errorMessage {
@@ -94,6 +95,7 @@ button:active {
 
 #outputField:hover {
     background-color: rgb(231, 233, 130);
+    max-width: fit-content;
 }
 
 #Calculation:hover {
